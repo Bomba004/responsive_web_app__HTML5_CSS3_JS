@@ -1,0 +1,80 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-lang="appName">kenz</title>
+
+    <!-- Lottie -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js"
+      defer
+    ></script>
+    <!-- Toastify -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <!-- Popper.js -->
+    <script src="https://unpkg.com/@popperjs/core@2" defer></script>
+    <!-- SweetAlert2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen">
+      <div class="logo-container">
+        <svg width="120" height="120" viewBox="0 0 100 100">
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            stroke="var(--primary)"
+            stroke-width="5"
+            fill="none"
+          />
+          <text
+            x="50%"
+            y="55%"
+            text-anchor="middle"
+            fill="var(--primary)"
+            font-size="1.8em"
+            font-family="sans-serif"
+          >
+            كنز
+          </text>
+        </svg>
+      </div>
+      <div id="lottie-welcome" class="lottie"></div>
+      <p class="welcome-text" data-lang="welcome">مرحبًا بك في kenz!</p>
+      <button id="skip-btn" class="btn" data-lang="skip">تخطي</button>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen hidden">
+      <h1 data-lang="loginTitle">تسجيل الدخول</h1>
+      <form id="login-form">
+        <label for="username" data-lang="userLabel">المستخدم</label>
+        <input type="text" id="username" required />
+        <label for="password" data-lang="passLabel">كلمة المرور</label>
+        <input type="password" id="password" required />
+        <button type="submit" class="btn" data-lang="loginBtn">دخول</button>
+      </form>
+    </div>
+
+    <!-- Theme & Lang Controller -->
+    <div class="controller">
+      <button onclick="toggleTheme()" title="Toggle Theme">🌓</button>
+      <button onclick="toggleLang()" title="Toggle Language">🌐</button>
+    </div>
+  </body>
+</html>

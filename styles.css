@@ -1,0 +1,139 @@
+/* styles.css */
+
+/* 1) Variables & Themes */
+:root {
+  --hsl-primary: 210, 80%, 55%;
+  --primary: hsl(var(--hsl-primary));
+  --light-bg: #f5f7fa;
+  --dark-bg: #121418;
+  --light-text: #2e2e38;
+  --dark-text: #e1e1e8;
+  --accent: hsl(340, 82%, 52%);
+  --spacing: 1em;
+  --radius: 0.5em;
+  --font: "Segoe UI", sans-serif;
+}
+
+html { font-size: 100%; }
+body {
+  margin: 0; padding: 0;
+  font-family: var(--font);
+  background: var(--light-bg);
+  color: var(--light-text);
+  transition: background .3s, color .3s;
+}
+body.dark {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* Utility */
+* { box-sizing: border-box; }
+.hidden { display: none !important; }
+
+/* Screen Layout */
+.screen {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  height: 100dvh; padding: var(--spacing);
+  transition: opacity .5s;
+}
+
+/* Logo */
+.logo-container svg {
+  filter: drop-shadow(0 0 8px var(--primary));
+}
+
+/* Buttons */
+.btn {
+  margin-top: var(--spacing);
+  padding: .8em 1.5em;
+  border: none; border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff; font-size: 1em;
+  box-shadow: 0 .3em .6em rgba(0,0,0,0.1);
+  transition: transform .2s, box-shadow .2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 .5em 1em rgba(0,0,0,0.15);
+}
+
+/* Lottie Container */
+.lottie {
+  width: 180px; height: 180px;
+  margin-bottom: var(--spacing);
+}
+
+/* Form Styles */
+form {
+  display: flex; flex-direction: column;
+  gap: var(--spacing);
+  width: 100%; max-width: 20em;
+}
+input {
+  padding: .6em;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1em;
+  transition: border-color .2s;
+}
+input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Controller Buttons */
+.controller {
+  position: fixed;
+  bottom: var(--spacing);
+  right: var(--spacing);
+  display: flex; gap: .5em;
+}
+.controller button {
+  font-size: 1.2em;
+  background: none; border: none;
+  cursor: pointer;
+}
+
+/* Toastify Overrides */
+.Toastify__toast {
+  font-family: var(--font);
+  font-size: .9em;
+  border-radius: var(--radius);
+}
+.Toastify__toast--default {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* SweetAlert2 Overrides */
+.swal2-popup {
+  font-family: var(--font);
+  border-radius: var(--radius) !important;
+  background: var(--light-bg) !important;
+}
+body.dark .swal2-popup {
+  background: var(--dark-bg) !important;
+}
+.swal2-title {
+  color: var(--primary) !important;
+}
+.swal2-confirm {
+  background: var(--primary) !important;
+}
+
+/* Popper.js Tooltip */
+.custom-tooltip {
+  padding: .4em .8em;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius);
+  font-size: .85em;
+}
+
+/* Responsive */
+@media (min-width: 48em) {
+  .welcome-text { font-size: 1.5em; }
+  .btn { font-size: 1.1em; }
+}
